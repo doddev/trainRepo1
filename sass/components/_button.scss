@@ -19,7 +19,6 @@
             transform: scaleX(1.4) scaleY(1.6);
             opacity: 0;
         }
-
     }
 
     &:active {
@@ -34,7 +33,6 @@
         &::after {
             background-color: $color-white;
         }
-
     }
 
     &::after {
@@ -54,7 +52,6 @@
         animation: moveInBottom .5s ease-out .75s; /* name duration effect delay */
         animation-fill-mode: backwards; /* automaticaly apply the style of 0% @keyframe before the start */
     }
-
 }
 
 .btn-text {
@@ -80,5 +77,4 @@
         box-shadow: 0 .5rem 1rem rgba($color-black, .15);
         transform: translateY(0);
     }
-
 }
