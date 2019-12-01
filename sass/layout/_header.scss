@@ -1,5 +1,6 @@
 .header {
     height: 95vh;
+    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba($color-primary-light, 0.800)), to(rgba($color-primary-dark, 0.800))), url(../img/hero.jpg);
     background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.800), rgba($color-primary-dark, 0.800)), url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
@@ -21,7 +22,8 @@
         position: absolute;
         top: 40%;
         left: 50%;
-        transform: translate(-49%, -49%);
+        -webkit-transform: translate(-49%, -49%);
+                transform: translate(-49%, -49%);
         text-align: center;
     }
 

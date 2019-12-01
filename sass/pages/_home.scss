@@ -6,6 +6,13 @@
 
 .section-features {
   padding: 20rem 0;
+  background-image: -webkit-gradient(
+      linear,
+      left top, right bottom,
+      from(rgba($color-primary-light, 0.8)),
+      to(rgba($color-primary-dark, 0.8))
+    ),
+    url(../img/nat-4.jpg);
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
@@ -13,12 +20,14 @@
     ),
     url(../img/nat-4.jpg);
   background-size: cover;
-  transform: skewY(-7deg);
+  -webkit-transform: skewY(-7deg);
+          transform: skewY(-7deg);
   margin-top: -12rem; // 10rem in Section5 lesson 38, change in future if needed...
 
   & > * {
     //  > only direct first child  * all
-    transform: skewY(7deg);
+    -webkit-transform: skewY(7deg);
+            transform: skewY(7deg);
   }
 }
 
@@ -35,6 +44,12 @@
 
 .section-book {
   padding: 15rem 0;
+  background-image: -webkit-gradient(
+    linear,
+    left top, right bottom,
+    from($color-primary-light),
+    to($color-primary-dark)
+  );
   background-image: linear-gradient(
     to right bottom,
     $color-primary-light,
@@ -52,7 +67,8 @@
     url(../img/nat-10.jpg);
   background-size: 100%;
   border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+  -webkit-box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+          box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
   height: 50rem;
 
   &__form {

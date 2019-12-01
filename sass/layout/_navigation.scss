@@ -12,7 +12,8 @@
         top: 6rem;
         right: 6rem;
         z-index: 2000;
-        box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        -webkit-box-shadow: 0 1rem 3rem rgba($color-black, .1);
+                box-shadow: 0 1rem 3rem rgba($color-black, .1);
         text-align: center;
         cursor: pointer;
     }
@@ -35,6 +36,7 @@
             content: "";
             position: absolute;
             left: 0;
+            -webkit-transition: all .2s;
             transition: all .2s;
         }
 
@@ -57,12 +59,14 @@
 
     &__checkbox:checked + &__button &__icon::before {
         top: 0;
-        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
     }
 
     &__checkbox:checked + &__button &__icon::after {
         top: 0;
-        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+                transform: rotate(-135deg);
     }
 
     &__background {
@@ -74,8 +78,14 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000;
+        -webkit-transition: -webkit-transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+        transition: -webkit-transform .8s cubic-bezier(0.86, 0, 0.07, 1);
         transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
-    }
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+        -moz-transition: -webkit-transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+        -ms-transition: -webkit-transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+        -o-transition: -webkit-transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+}
 
     &__nav {
         height: 100vh;
@@ -85,14 +95,12 @@
         z-index: 1500;
         opacity: 0;
         width: 0;
+        -webkit-transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
     &__list {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include absCenter;
         list-style: none;
         text-align: center;
         width: 100%;
@@ -114,8 +122,10 @@
             text-transform: uppercase;
             background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
             background-size: 220%;
+            -webkit-transition: all .4s;
             transition: all .4s;
-            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
 
             span {
                 margin-right: 1.5rem;
@@ -127,12 +137,14 @@
         &:active {
             background-position: 100%;
             color: $color-primary;
-            transform: translateX(1rem);
+            -webkit-transform: translateX(1rem);
+                    transform: translateX(1rem);
         }
     }
 
     &__checkbox:checked ~ &__background {
-        transform: scale(80);
+        -webkit-transform: scale(80);
+                transform: scale(80);
     }
 
     &__checkbox:checked ~ &__nav {

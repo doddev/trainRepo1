@@ -1,30 +1,41 @@
 .card {
   //FUNCTIONALITY
-  perspective: 150rem;
+  -webkit-perspective: 150rem;
+          perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
   height: 52rem;
 
   &__side {
     height: 52rem;
+    -webkit-transition: all 0.8s ease;
     transition: all 0.8s ease;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15); //best-practice: create shadow variables
+    -webkit-box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+            box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15); //best-practice: create shadow variables
 
     &--front {
       background-color: $color-white;
     }
 
     &--back {
-      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
 
       &-1 {
+        background-image: -webkit-gradient(
+          linear,
+          left top, right bottom,
+          from($color-secondary-light),
+          to($color-secondary-dark)
+        );
         background-image: linear-gradient(
           to right bottom,
           $color-secondary-light,
@@ -33,6 +44,12 @@
       }
 
       &-2 {
+        background-image: -webkit-gradient(
+          linear,
+          left top, right bottom,
+          from($color-primary-light),
+          to($color-primary-dark)
+        );
         background-image: linear-gradient(
           to right bottom,
           $color-primary-light,
@@ -41,6 +58,12 @@
       }
 
       &-3 {
+        background-image: -webkit-gradient(
+          linear,
+          left top, right bottom,
+          from($color-tertiary-light),
+          to($color-tertiary-dark)
+        );
         background-image: linear-gradient(
           to right bottom,
           $color-tertiary-light,
@@ -51,11 +74,13 @@
   }
 
   &:hover &__side--front {
-    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
   }
 
   &:hover &__side--back {
-    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
   }
 
   //FRONT SIDE STYLING
@@ -69,6 +94,13 @@
     border-top-right-radius: 3px;
 
     &--1 {
+      background-image: -webkit-gradient(
+          linear,
+          left top, right bottom,
+          from($color-secondary-light),
+          to($color-secondary-dark)
+        ),
+        url(../img/nat-5.jpg);
       background-image: linear-gradient(
           to right bottom,
           $color-secondary-light,
@@ -78,6 +110,13 @@
     }
 
     &--2 {
+      background-image: -webkit-gradient(
+          linear,
+          left top, right bottom,
+          from($color-primary-light),
+          to($color-primary-dark)
+        ),
+        url(../img/nat-6.jpg);
       background-image: linear-gradient(
           to right bottom,
           $color-primary-light,
@@ -87,6 +126,13 @@
     }
 
     &--3 {
+      background-image: -webkit-gradient(
+          linear,
+          left top, right bottom,
+          from($color-tertiary-light),
+          to($color-tertiary-dark)
+        ),
+        url(../img/nat-7.jpg);
       background-image: linear-gradient(
           to right bottom,
           $color-tertiary-light,
@@ -114,6 +160,12 @@
     box-decoration-break: clone;
 
     &--1 {
+      background-image: -webkit-gradient(
+        linear,
+        left top, right bottom,
+        from(rgba($color-secondary-light, 0.85)),
+        to(rgba($color-secondary-dark, 0.85))
+      );
       background-image: linear-gradient(
         to right bottom,
         rgba($color-secondary-light, 0.85),
@@ -122,6 +174,12 @@
     }
 
     &--2 {
+      background-image: -webkit-gradient(
+        linear,
+        left top, right bottom,
+        from(rgba($color-primary-light, 0.85)),
+        to(rgba($color-primary-dark, 0.85))
+      );
       background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.85),
@@ -130,6 +188,12 @@
     }
 
     &--3 {
+      background-image: -webkit-gradient(
+        linear,
+        left top, right bottom,
+        from(rgba($color-tertiary-light, 0.85)),
+        to(rgba($color-tertiary-dark, 0.85))
+      );
       background-image: linear-gradient(
         to right bottom,
         rgba($color-tertiary-light, 0.85),
@@ -160,10 +224,7 @@
 
   //BACK SIDE STYLING
   &__cta {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include absCenter;
     width: 90%;
     text-align: center;
   }
