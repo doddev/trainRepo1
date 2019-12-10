@@ -11,6 +11,10 @@
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+
   &:hover {
     -webkit-transform: translateY(-1.5rem) scale(1.03);
             transform: translateY(-1.5rem) scale(1.03);
@@ -34,5 +38,9 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+
+    @include respond(tab-port) {
+      margin-bottom: 0;
+    }
   }
 }
